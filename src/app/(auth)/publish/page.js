@@ -1,6 +1,6 @@
 import React from 'react';
-import { NewBlog } from '../../../lib/Blog';
-import CreateBlog from "../../../components/CreateBlog";
+
+import CreateBlog from "../../../../components/CreateBlog";
 
 export default function createBlog() {
   async function createBlog(prevState,formData){

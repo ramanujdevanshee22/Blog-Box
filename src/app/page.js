@@ -1,9 +1,13 @@
 import Image from "next/image";
 import Link from 'next/link';
 import Feed from "../../public/images/feed.gif";
+import NavBar from "../../components/NavBar";
 
 export default function Home() {
   return (
+    <>
+    
+      <NavBar/>
     <div className="scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300 flex items-center justify-center bg-white overflow-hidden pt-8 font-WorkSans">
       <div className="flex flex-col lg:pt-5 md:flex-row items-center justify-between w-full max-w-6xl px-4">
         <div className="flex flex-col items-start max-w-md md:text-left">
@@ -21,5 +25,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </>
   );
 }

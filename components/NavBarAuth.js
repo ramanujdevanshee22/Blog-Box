@@ -1,17 +1,16 @@
 "use client";
 import React from "react";
-import Image from 'next/image';
-
-import Link from "next/link";
-
+import Image from "next/image";
+import Profile from "./Profile";
+import Link from 'next/link'
 import IconB from "../public/images/iconB.png";
 import { usePathname } from "next/navigation";
 
-function NavBar() {
+function NavBarAuth() {
   const path = usePathname();
 
   return (
-    <nav className="bg-white font-WorkSans sticky top-4 mx-8">
+    <nav className="bg-white font-WorkSans sticky top-4 mx-5">
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center pb-7">
         <div className="flex items-center">
           <Image src={IconB} width={40} height={30} alt="Icon" />
@@ -28,25 +27,26 @@ function NavBar() {
         <div className="flex flex-wrap justify-center text-md lg:justify-end space-x-4 lg:text-xl">
           <>
             <Link
-              href="/login"
+              href="/blog"
               className={
-                path === "/login"
+                path === "/blog"
                   ? "text-zinc-800 bg-zinc-100 hover:text-white hover:bg-SecondaryPink px-3 py-2 transition duration-300 rounded-lg"
                   : "text-zinc-400 hover:text-white hover:bg-SecondaryPink px-3 py-2 transition duration-300 rounded-lg"
               }
             >
-              Log In
+              Blogs
             </Link>
             <Link
-              href="/signup"
+              href="/publish"
               className={
-                path === "/signup"
+                path === "/publish"
                   ? "text-zinc-800 bg-zinc-100 hover:text-white hover:bg-SecondaryPink px-3 py-2 transition duration-300 rounded-lg"
                   : "text-zinc-400 hover:text-white hover:bg-SecondaryPink px-3 py-2 transition duration-300 rounded-lg"
               }
             >
-              Sign Up
+              Publish
             </Link>
+            <Profile />
           </>
         </div>
       </div>
@@ -54,4 +54,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default NavBarAuth;

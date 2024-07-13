@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import dummy from '../public/images/girl.png';
+import Logout from './Logout';
 
 function Profile() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,10 +12,6 @@ function Profile() {
     setIsOpen(!isOpen);
   };
 
-  const handleLogout = () => {
-    // Handle logout logic here
-    console.log("Logging out...");
-  };
 
   return (
     <div className='relative'>
@@ -26,9 +23,8 @@ function Profile() {
           <Link href="/profile" className='block px-4 py-2 text-PrimaryBlack hover:text-SecondaryPink'>
             Profile
           </Link>
-          <button onClick={handleLogout} className='block px-4 py-2 text-PrimaryBlack  hover:text-SecondaryPink w-full text-left'>
-            Logout
-          </button>
+          {/* <Logout/> */}
+       
         </div>
       )}
     </div>

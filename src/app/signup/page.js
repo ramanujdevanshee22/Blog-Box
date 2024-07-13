@@ -2,8 +2,17 @@ import { redirect } from 'next/navigation';
 import { storeUser } from '../../../lib/User';
 
 import SignupForm from '../../../components/SignupForm';
+import NavBar from '../../../components/NavBar';
 
 export default function SignUp() {
+  return(
+    <>
+    <NavBar/>
+    <SignupForm action={createUser} />;
+    </>
+  )
+
+}
   async function createUser(prevState, formData) {
     'use server';
    
@@ -46,5 +55,4 @@ export default function SignUp() {
     redirect('/login');
   }
 
-  return <SignupForm action={createUser} />;
-}
+  

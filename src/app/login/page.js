@@ -2,15 +2,15 @@ import { redirect } from 'next/navigation';
 import { validateRequest } from '../../../lib/auth';
 import LoginForm from '../../../components/LoginForm';
 import { Login } from '../../../lib/User';
+import NavBar from '../../../components/NavBar';
 
 export default async function LoginPage() {
-  const { user } = await validateRequest();
-
-  if (user) {
-    return redirect('/blog');
-  }
-
-  return <LoginForm action={LoginUser} />;
+  return(
+    <>
+    <NavBar/>
+    <LoginForm action={LoginUser}/>
+    </>
+  ) 
 }
   async function LoginUser(prevState, formData) {
     "use server";
@@ -45,5 +45,7 @@ export default async function LoginPage() {
     redirect("/blog");
   }
 
-  // return <LoginForm action={LoginUser} />;
+  
+
+ 
 
