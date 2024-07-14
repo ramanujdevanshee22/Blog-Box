@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import { validateRequest } from '../../../lib/auth';
+import { validateRequest } from '../../../lib/instance';
 import LoginForm from '../../../components/LoginForm';
 import { Login } from '../../../lib/User';
 import NavBar from '../../../components/NavBar';

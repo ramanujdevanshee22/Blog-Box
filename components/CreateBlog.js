@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import { useFormState } from "react-dom";
 import Link from "next/link";
@@ -109,12 +108,12 @@ function BlogPostForm({ action }) {
             >
               Publish
             </button>
-            <button
-              type="button"
+            <Link
+              href="/blog"
               className="bg-PrimaryBlack text-white py-2 px-4 rounded-lg hover:bg-SecondaryPink transition duration-300"
             >
               Cancel
-            </button>
+            </Link>
           </div>
           {/* {state.errors > 0 && (
             <ul className="text-red-400 font-medium text-md mt-4">

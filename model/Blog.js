@@ -24,7 +24,7 @@ const BlogSchema = new mongoose.Schema(
             }
         },
         category:{
-            type:string,
+            type: String,
             required:true,
             enum:["Technology","Food","Sports","Music","Politics","Movie","Fitness","Travel","Beauty","Fashion","Books","Religion","Photography","Business","Art","News"]
         },

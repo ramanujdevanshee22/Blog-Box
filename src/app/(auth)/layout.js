@@ -12,10 +12,10 @@ export const metadata = {
 export default function AuthRootLayout({ children }) {
   return (
     <>
-    <div className="mt-3">
+    
     <NavBarAuth />
       {children}
-    </div>
+ 
       
     </>
   );

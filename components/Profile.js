@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import dummy from '../public/images/girl.png';
-import Logout from './Logout';
+import { logout } from '../lib/User';
 
 function Profile() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +23,9 @@ function Profile() {
           <Link href="/profile" className='block px-4 py-2 text-PrimaryBlack hover:text-SecondaryPink'>
             Profile
           </Link>
-          {/* <Logout/> */}
+          <form action={logout} className='block px-4 py-2 text-PrimaryBlack  hover:text-SecondaryPink w-full text-left'>
+      <button>Log out</button>
+    </form>
        
         </div>
       )}

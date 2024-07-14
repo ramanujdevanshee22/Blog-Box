@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import { storeUser } from '../../../lib/User';
+import { signup } from '../../../lib/User';
 
 import SignupForm from '../../../components/SignupForm';
 import NavBar from '../../../components/NavBar';
@@ -41,7 +41,7 @@ export default function SignUp() {
     }
 
     try {
-      await storeUser({
+      await signup({
         username,
         email,
         password

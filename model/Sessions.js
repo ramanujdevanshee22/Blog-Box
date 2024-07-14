@@ -1,6 +1,9 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const SessionSchema = new mongoose.Schema({
+  _id: {
+    type: String,
+  },
   user_id: {
     type: String,
     required: true,
@@ -11,4 +14,5 @@ const SessionSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.models.Session || mongoose.model('Session', SessionSchema);
+module.exports =
+  mongoose.models.Session || mongoose.model("Session", SessionSchema);
