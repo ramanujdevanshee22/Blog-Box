@@ -1,6 +1,6 @@
-
 import "./globals.css";
-import NavBar from "../../components/NavBar";
+
+import { Toaster } from "sonner";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -12,9 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className="scrollbar scrollbar-w-2 scrollbar-thumb-neutral-400 scrollbar-thumb-rounded-2xl ">
         
-        {children}</body>
+        {children}
+        <Toaster richColors position="top-center"/></body>
     </html>
   );
 }

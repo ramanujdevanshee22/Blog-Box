@@ -1,4 +1,5 @@
 // import "../globals.css";
+
 import NavBarAuth from "../../../components/NavBarAuth";
 
 
@@ -15,7 +16,7 @@ export default function AuthRootLayout({ children }) {
     
     <NavBarAuth />
       {children}
- 
+    
       
     </>
   );

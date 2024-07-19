@@ -14,14 +14,9 @@ const BlogSchema = new mongoose.Schema(
             required:true,
             min: 6
         },
-        image:{
-            id:{
-
-                type:String
-            },
-            url:{
-                type:String
-            }
+        image_url:{
+                type:String,
+                required:true
         },
         category:{
             type: String,
@@ -33,9 +28,8 @@ const BlogSchema = new mongoose.Schema(
             ref:"User"
         },
         likes:{
-            type:[mongoose.Schema.Types.ObjectId],
-            ref:"User",
-            default:[]
+           type:Number,
+           default:0
         },
         comments:[
             {

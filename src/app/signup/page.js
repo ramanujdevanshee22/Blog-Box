@@ -3,8 +3,15 @@ import { signup } from '../../../lib/User';
 
 import SignupForm from '../../../components/SignupForm';
 import NavBar from '../../../components/NavBar';
+import { VerifyAuth } from '../../../lib/User';
 
-export default function SignUp() {
+export default async function SignUp() {
+  const result =  await VerifyAuth();
+
+  
+    if(result.user){
+      return redirect('/blog');
+    }
   return(
     <>
     <NavBar/>

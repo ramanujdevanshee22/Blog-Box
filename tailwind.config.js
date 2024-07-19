@@ -21,9 +21,9 @@ module.exports = {
         
       },
     },
-    boxShadow: {
-      'xl': '0 10px 20px rgba(0, 0, 0, 0.25)',
-    },
+    // boxShadow: {
+    //   'xl': '0 10px 20px rgba(0, 0, 0, 0.25)',
+    // },
     fontFamily: {
       'quicksand': ['Quicksand', 'sans-serif'],
       'Merriweather': ['Merriweather', 'serif'],
@@ -32,6 +32,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('tailwind-scrollbar'),
+    require('tailwind-scrollbar')({ nocompatible: true }),
   ],
 };

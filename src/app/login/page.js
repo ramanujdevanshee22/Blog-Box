@@ -1,10 +1,18 @@
+import React from "react";
 import { redirect } from 'next/navigation';
-import { validateRequest } from '../../../lib/instance';
+
 import LoginForm from '../../../components/LoginForm';
 import { Login } from '../../../lib/User';
 import NavBar from '../../../components/NavBar';
+import { VerifyAuth } from "../../../lib/User";
 
 export default async function LoginPage() {
+  const result =  await VerifyAuth();
+
+  
+    if(result.user){
+      return redirect('/blog');
+    }
   return(
     <>
     <NavBar/>
