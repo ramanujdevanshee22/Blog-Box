@@ -82,7 +82,7 @@ function BlogPostForm({ action }) {
               <label className="block text-gray-700 font-semibold mb-2">
                 Category
               </label>
-              <datalist
+              <select
                 id="category"
                 name="category"
                 className="w-full px-3 py-[0.68rem] border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-SecondaryPurple"
@@ -90,6 +90,8 @@ function BlogPostForm({ action }) {
               >
                 <option value="">Select a category</option>
                 <option value="Technology">Technology</option>
+                <option value="Technology">Lifestyle</option>
+                <option value="Technology">Education</option>
                 <option value="Food">Food</option>
                 <option value="Sports">Sports</option>
                 <option value="Music">Music</option>
@@ -105,7 +107,8 @@ function BlogPostForm({ action }) {
                 <option value="Business">Business</option>
                 <option value="Art">Art</option>
                 <option value="News">News</option>
-              </datalist>
+                <option value="News">Science</option>
+              </select>
             </div>
             <div className="">
               <label className="block text-gray-700 font-semibold mb-1">

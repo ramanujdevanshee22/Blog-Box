@@ -11,6 +11,7 @@ export default async function LoginPage() {
 
   
     if(result.user){
+
       return redirect('/blog');
     }
   return(
@@ -39,18 +40,20 @@ export default async function LoginPage() {
     if (errors.length > 0) {
       return { errors };
     }
-
+  
     try {
-      await Login({
+     await Login({
         email,
         password,
       });
+
     } catch (error) {
       errors.push(error.message);
       return { errors };
     }
 
     redirect("/blog");
+    
   }
 
   

@@ -6,7 +6,7 @@ export default function FormSubmit(){
     const status = useFormStatus();
 
     if(status.pending){
-        return <p className='text-SecondaryPurple font-medium text-lg'>Creating Blog...</p>
+        return <p className='text-SecondaryPurple font-medium text-lg animate-pulse'>Creating Blog...</p>
     }
 
     return(
