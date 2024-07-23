@@ -53,7 +53,7 @@ export default async function BlogPage() {
                   {blog.title}
                 </h2>
                 <div className="flex items-center">
-                  <span className="mr-2">{blog.likes}</span>
+                  <span className="mr-2">{blog.likes.length}</span>
                   <svg
                     className="w-6 h-6 text-red-500"
                     fill="currentColor"

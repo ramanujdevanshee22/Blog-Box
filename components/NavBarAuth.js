@@ -13,7 +13,7 @@ function NavBarAuth() {
     <nav className="bg-white font-WorkSans sticky top-0 p-5">
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center pb-7">
         <div className="flex items-center">
-          <Image src={IconB} width={40} height={30} alt="Icon" />
+          <Image src={IconB} width={40} height={40} alt="Icon" />
 
           <div className="text-4xl font-bold text-PrimaryBlack ml-2">
             <Link href="/">

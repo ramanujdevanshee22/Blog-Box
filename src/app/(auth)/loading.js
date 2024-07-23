@@ -1,6 +1,6 @@
 export default function Loading() {
   return (
-    <div id="loading-overlay" className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-60">
+    <div  className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-60">
 
     <svg className="animate-spin h-6 w-6 text-black/60 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none"
         viewBox="0 0 24 24">
