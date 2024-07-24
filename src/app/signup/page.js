@@ -10,7 +10,7 @@ export default async function SignUp() {
 
   
     if(result.user){
-      return redirect('/blog');
+      return redirect('/blogs');
     }
   return(
     <>

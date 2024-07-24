@@ -1,8 +1,6 @@
-
 import React from "react";
-import { LikeHandler } from "../lib/Blog";
-import Comment from "./Comment";
-import LikeButton from "./LikeButton";
+import Feedback from "./Feedback";
+
 
 export default function ParticularBlog({ particularBlog, userId }) {
 
@@ -16,13 +14,7 @@ export default function ParticularBlog({ particularBlog, userId }) {
 
   const isLiked = particularBlog.likes.includes(userId.id);
 
-  // const handleCommentSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Add logic to submit the comment to the backend and update the state
-  //   const updatedComments = [...comments, { text: newComment, author: userId.username, createdAt: new Date().toISOString() }];
-  //   setComments(updatedComments);
-  //   setNewComment("");
-  // };
+  
 
   return (
     <div className="bg-white text-PrimaryBlack min-h-screen p-8 font-WorkSans">
@@ -62,27 +54,9 @@ export default function ParticularBlog({ particularBlog, userId }) {
           {particularBlog.description}
         </p>
 
-        <div className="flex justify-between items-center mb-4">
-          <div className="flex items-center space-x-4">
-        
-              <LikeButton blog={particularBlog} userId={userId} isLiked={isLiked}/>
-          
 
-            <button className="flex items-center hover:text-SecondaryPurple">
-              <svg
-                className="w-6 h-6 mr-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path d="M18 10c0 3.866-3.582 7-8 7a8.58 8.58 0 01-2.43-.357L4 17.667l.755-2.264A7.97 7.97 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7z" />
-              </svg>
-              {particularBlog.comments.length} Comments
-            </button>
-          </div>
-        </div>
-
-        {/* Comment input field */}
-        <Comment particularBlog={particularBlog} userId={userId}/>
+        {/* Comment input field and like button*/}
+        <Feedback particularBlog={particularBlog} userId={userId} isLiked={isLiked}/>
       </div>
     </div>
   );

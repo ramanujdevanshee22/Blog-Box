@@ -20,15 +20,19 @@ export default async function BlogPage() {
 
   const blogs = await getblogs();
 
-  if(blogs.warning){
-    toast.error(blogs.warning)
+  if (blogs.warning) {
+    toast.error(blogs.warning);
   }
 
   if (!blogs || blogs.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center mt-8 p-4 rounded">
-        <div className="text-SecondaryPink text-4xl font-bold">⚠️ No Blogs!</div>
-        <p className="text-gray-600 mt-2 animate-pulse text-lg">Try adding some...</p>
+        <div className="text-SecondaryPink text-4xl font-bold">
+          ⚠️ No Blogs!
+        </div>
+        <p className="text-gray-600 mt-2 animate-pulse text-lg">
+          Try adding some...
+        </p>
       </div>
     );
   }
@@ -63,11 +67,11 @@ export default async function BlogPage() {
                   </svg>
                   <span className="ml-4 mr-2">{blog.comments.length}</span>
                   <svg
-                    className="w-6 h-6 text-gray-500"
+                    className="w-6 h-6 mr-1 text-gray-600"
                     fill="currentColor"
-                    viewBox="0 0 24 24"
+                    viewBox="0 0 20 20"
                   >
-                    <path d="M20 2H4C2.9 2 2 2.9 2 4V18C2 19.1 2.9 20 4 20H18L22 24V4C22 2.9 21.1 2 20 2ZM20 18L18 16H4V4H20V18Z" />
+                    <path d="M18 10c0 3.866-3.582 7-8 7a8.58 8.58 0 01-2.43-.357L4 17.667l.755-2.264A7.97 7.97 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7z" />
                   </svg>
                 </div>
               </div>
@@ -77,7 +81,7 @@ export default async function BlogPage() {
                   {formatDate(blog.createdAt)}
                 </time>
               </p>
-               {/* <p className="text-gray-400 text-sm mb-2 font-semibold"><time dateTime={blog.createdAt}>
+              {/* <p className="text-gray-400 text-sm mb-2 font-semibold"><time dateTime={blog.createdAt}>
                   {formatDate(blog.createdAt)}
                 </time> | by {blog.author_id.username}</p> */}
               <p
@@ -92,7 +96,7 @@ export default async function BlogPage() {
                 {blog.quote}
               </p>
               <Link
-                href={`/blog/${blog._id}`}
+                href={`/blogs/${blog._id}`}
                 className="text-stone-400 hover:bg-stone-100 rounded-md p-1 mt-8 inline-block"
               >
                 Know More

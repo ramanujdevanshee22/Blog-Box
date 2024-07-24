@@ -33,13 +33,17 @@ const BlogSchema = new mongoose.Schema(
         },
         comments:[
             {
+                id:{
+                    type:mongoose.Schema.Types.ObjectId,
+                    requred: true,
+                },
                 user:{
                     type:mongoose.Schema.Types.ObjectId,
                     ref:"User",
                  
                 },
                 text:{
-                    type:String,
+                    type:String, 
                     required:true
                 },
                 date:{

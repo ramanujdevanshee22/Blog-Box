@@ -12,7 +12,7 @@ export default async function LoginPage() {
   
     if(result.user){
 
-      return redirect('/blog');
+      return redirect('/blogs');
     }
   return(
     <>

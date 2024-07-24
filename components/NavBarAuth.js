@@ -28,9 +28,20 @@ function NavBarAuth() {
           <>
             <Link
             title="All blogs"
-              href="/blog"
+              href="/myblogs"
               className={
-                path === "/blog"
+                path === "/myblogs"
+                  ? "text-zinc-800 bg-zinc-100 hover:text-white hover:bg-SecondaryPink px-3 py-2 transition duration-300 rounded-lg"
+                  : "text-zinc-400 hover:text-white hover:bg-SecondaryPink px-3 py-2 transition duration-300 rounded-lg"
+              }
+            >
+              My Blogs
+            </Link>
+            <Link
+            title="All blogs"
+              href="/blogs"
+              className={
+                path === "/blogs"
                   ? "text-zinc-800 bg-zinc-100 hover:text-white hover:bg-SecondaryPink px-3 py-2 transition duration-300 rounded-lg"
                   : "text-zinc-400 hover:text-white hover:bg-SecondaryPink px-3 py-2 transition duration-300 rounded-lg"
               }

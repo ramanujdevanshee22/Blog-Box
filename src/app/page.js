@@ -10,7 +10,7 @@ export default async function Home() {
 
   //  console.log("User found at entry page",result.user)
     if(result.user){
-      return redirect('/blog');
+      return redirect('/blogs');
     }
   return (
     <>
