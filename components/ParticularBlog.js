@@ -1,10 +1,10 @@
 import React from "react";
 import Feedback from "./Feedback";
-
+import Link from "next/link";
+import LinkIcon from "../public/images/link.png";
+import Image from "next/image";
 
 export default function ParticularBlog({ particularBlog, userId }) {
-
-
   function formatDate(date) {
     return new Intl.DateTimeFormat("en-US", {
       dateStyle: "medium",
@@ -14,8 +14,6 @@ export default function ParticularBlog({ particularBlog, userId }) {
 
   const isLiked = particularBlog.likes.includes(userId.id);
 
-  
-
   return (
     <div className="bg-white text-PrimaryBlack min-h-screen p-8 font-WorkSans">
       <div className="max-w-4xl mx-auto">
@@ -24,11 +22,24 @@ export default function ParticularBlog({ particularBlog, userId }) {
             <h1 className="text-4xl font-bold text-PrimaryBlack mb-1">
               {particularBlog.title}
             </h1>
-            <p className="text-gray-400 text-md font-medium mb-3">
+            <p className="text-gray-400 text-md font-medium mb-3 ">
               <time dateTime={particularBlog.createdAt}>
                 {formatDate(particularBlog.createdAt)}
               </time>{" "}
-              | by {particularBlog.author_id.username}
+              |{" "}
+              <Link
+                className="hover:text-gray-600"
+                href={`/account/${particularBlog.author_id._id}`}
+                title="Author's Details"
+              >
+                by {particularBlog.author_id.username}
+                <Image
+                  src={LinkIcon}
+                  height={12}
+                  width={12}
+                  className="inline-block m-2 "
+                />
+              </Link>
             </p>
             <h4 className="text-lg font-medium text-black/60 mb-3">
               {particularBlog.category}
@@ -54,9 +65,12 @@ export default function ParticularBlog({ particularBlog, userId }) {
           {particularBlog.description}
         </p>
 
-
         {/* Comment input field and like button*/}
-        <Feedback particularBlog={particularBlog} userId={userId} isLiked={isLiked}/>
+        <Feedback
+          particularBlog={particularBlog}
+          userId={userId}
+          isLiked={isLiked}
+        />
       </div>
     </div>
   );

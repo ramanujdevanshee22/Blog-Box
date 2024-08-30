@@ -21,7 +21,7 @@ const BlogSchema = new mongoose.Schema(
         category:{
             type: String,
             required:true,
-            enum:["Lifestyle","Education","Technology","Food","Sports","Music","Politics","Movie","Fitness","Travel","Beauty","Fashion","Books","Religion","Photography","Business","Art","News"]
+            enum:["Environment","Lifestyle","Education","Technology","Food","Sports","Music","Politics","Movie","Fitness","Travel","Beauty","Fashion","Books","Religion","Photography","Business","Art","News"]
         },
         author_id:{
             type:mongoose.Schema.Types.ObjectId,

@@ -52,7 +52,7 @@ export default async function LoginPage() {
       return { errors };
     }
 
-    redirect("/blog");
+    redirect("/blogs");
     
   }
 

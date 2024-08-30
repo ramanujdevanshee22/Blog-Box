@@ -13,17 +13,13 @@ const UserSchema = new mongoose.Schema(
             type:String,
             required:true
         },
-        profile_url:{
-            type:String,
-            default:"",
-        },
         occupation:{
             type:String,
             default:""
         },
-        avatar:{
-            type:Object,
-            default:{}
+        profile_img_url:{
+            type:String,
+            default:""
         },
         age:{
             type:String,

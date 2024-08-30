@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="scrollbar scrollbar-w-2 scrollbar-thumb-neutral-400 scrollbar-thumb-rounded-2xl ">
+      <body className="dark:bg-black scrollbar scrollbar-w-2 scrollbar-thumb-neutral-400 scrollbar-thumb-rounded-2xl dark:scrollbar-thumb-neutral-200">
         
         {children}
         <Toaster richColors position="top-center"/></body>

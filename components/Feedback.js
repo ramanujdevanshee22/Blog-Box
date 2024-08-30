@@ -5,6 +5,7 @@ import { CommentHandler, DeleteCommentHandler } from "../lib/Blog";
 import { toast } from "sonner";
 import LikeButton from "./LikeButton";
 
+
 export default function Feedback({ particularBlog, userId, isLiked }) {
   function formatDate(date) {
     return new Intl.DateTimeFormat("en-US", {
@@ -24,11 +25,11 @@ export default function Feedback({ particularBlog, userId, isLiked }) {
       toast.error("Please enter a comment.");
     }
     if (Comment) {
-      const newComment = {
-        user: userId.id,
-        text: Comment,
-        date: new Date().toISOString(),
-      };
+      // const newComment = {
+      //   user: userId.id,
+      //   text: Comment,
+      //   date: new Date().toISOString(),
+      // };
       try {
         const updatedComments = await CommentHandler(
           Comment,
@@ -37,6 +38,7 @@ export default function Feedback({ particularBlog, userId, isLiked }) {
         );
         setAllComments(updatedComments);
         setComment("");
+      
       } catch (e) {
         console.log(e);
         toast.error("Failed to add comment");
@@ -102,14 +104,14 @@ export default function Feedback({ particularBlog, userId, isLiked }) {
             className="p-4 bg-gray-100 rounded-lg flex justify-between items-center"
           >
             <div>
-              <p className="text-black font-medium">{comment.user}</p>
+              <p className="text-black font-medium">{comment.user.username}</p>
               <p></p>
               <p className="text-gray-600">{comment.text}</p>
               <time className="text-gray-400 text-sm">
                 {formatDate(comment.date)}
               </time>
             </div>
-            {userId.id === comment.user && (
+            {(userId.id === comment.user || userId.id === particularBlog.author_id._id)  && (
               <button
               title="Delete"
                 onClick={() => handleDelete(comment._id)}
@@ -135,5 +137,4 @@ export default function Feedback({ particularBlog, userId, isLiked }) {
         ))}
       </div>
     </>
-  );
-}
+  )}

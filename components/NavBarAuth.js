@@ -6,7 +6,8 @@ import Link from 'next/link'
 import IconB from "../public/images/iconB.png";
 import { usePathname } from "next/navigation";
 
-function NavBarAuth() {
+
+function NavBarAuth({user}) {
   const path = usePathname();
 
   return (
@@ -14,7 +15,7 @@ function NavBarAuth() {
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center pb-7">
         <div className="flex items-center">
           <Image src={IconB} width={40} height={40} alt="Icon" />
-
+          
           <div className="text-4xl font-bold text-PrimaryBlack ml-2">
             <Link href="/">
               Blog
@@ -26,18 +27,7 @@ function NavBarAuth() {
         </div>
         <div className="flex flex-wrap justify-center text-md lg:justify-end space-x-4 lg:text-xl">
           <>
-            <Link
-            title="All blogs"
-              href="/myblogs"
-              className={
-                path === "/myblogs"
-                  ? "text-zinc-800 bg-zinc-100 hover:text-white hover:bg-SecondaryPink px-3 py-2 transition duration-300 rounded-lg"
-                  : "text-zinc-400 hover:text-white hover:bg-SecondaryPink px-3 py-2 transition duration-300 rounded-lg"
-              }
-            >
-              My Blogs
-            </Link>
-            <Link
+          <Link
             title="All blogs"
               href="/blogs"
               className={
@@ -48,6 +38,19 @@ function NavBarAuth() {
             >
               Blogs
             </Link>
+
+            <Link
+            title="My blogs"
+              href="/myblogs"
+              className={
+                path === "/myblogs"
+                  ? "text-zinc-800 bg-zinc-100 hover:text-white hover:bg-SecondaryPink px-3 py-2 transition duration-300 rounded-lg"
+                  : "text-zinc-400 hover:text-white hover:bg-SecondaryPink px-3 py-2 transition duration-300 rounded-lg"
+              }
+            >
+              My Blogs
+            </Link>
+          
             <Link 
               title="Create new blog"
               href="/publish"
@@ -59,7 +62,7 @@ function NavBarAuth() {
             >
               Publish
             </Link>
-            <Profile />
+            <Profile user={user} />
           </>
         </div>
       </div>

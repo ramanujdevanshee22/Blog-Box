@@ -2,11 +2,11 @@
 import {useFormStatus} from 'react-dom';
 import Link from 'next/link';
 
-export default function FormSubmit(){
+export default function FormSubmit({btn1, href2, msg}){
     const status = useFormStatus();
 
     if(status.pending){
-        return <p className='text-SecondaryPurple font-medium text-lg animate-pulse'>Creating Blog...</p>
+        return <p className='text-SecondaryPurple font-medium text-lg animate-pulse'>{msg}</p>
     }
 
     return(
@@ -16,10 +16,10 @@ export default function FormSubmit(){
            
               className="shadow-lg bg-PrimaryBlack text-white py-2 px-4 rounded-lg hover:bg-SecondaryPurple transition duration-300"
             >
-              Publish
+            {btn1}
             </button>
             <Link
-              href="/blog"
+              href={href2}
               className="shadow-lg bg-PrimaryBlack text-white py-2 px-4 rounded-lg hover:bg-SecondaryPink transition duration-300"
             >
               Cancel

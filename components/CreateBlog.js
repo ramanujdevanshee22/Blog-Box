@@ -20,7 +20,7 @@ function BlogPostForm({ action }) {
     }
     if (state.msg) {
       toast.success(state.msg);
-      router.push("/blog");
+      router.push("/blogs");
     }
   }, [state.msg]);
 
@@ -108,6 +108,7 @@ function BlogPostForm({ action }) {
                 <option value="Art">Art</option>
                 <option value="News">News</option>
                 <option value="News">Science</option>
+                <option value="News">Environment</option>
               </select>
             </div>
             <div className="">
@@ -150,7 +151,7 @@ function BlogPostForm({ action }) {
               </div>
             </div>
           </div>
-          <FormSubmit />
+          <FormSubmit btn1="Publish"  href2="/blogs" msg="Creating BLog..."/>
 
           {state.errors && (
             <ul className="text-red-400 font-medium text-md mt-4">
