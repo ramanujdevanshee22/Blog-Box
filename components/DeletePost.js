@@ -34,13 +34,13 @@ const handleDelete = async (blogId) =>{
         <div className="mt-4 flex justify-end">
           <button
             onClick={()=>setModelOpen(false)}
-            className="bg-gray-200 text-gray-800 py-2 px-4 rounded-md mr-2"
+            className="bg-gray-200 text-gray-800 hover:bg-gray-400 py-2 px-4 rounded-md mr-2"
             >
             Cancel
           </button>
           <button
             onClick={()=>handleDelete(blogId)}
-            className="bg-red-500 text-white py-2 px-4 rounded-md"
+            className="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded-md"
             >
             Delete
           </button>

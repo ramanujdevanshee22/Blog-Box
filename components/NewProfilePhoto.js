@@ -32,7 +32,7 @@ export default function NewProfilePhoto({ action }) {
 
   return (
     <section className="flex items-center justify-center ">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md border border-gray-300 mt-8">
+      <div className="bg-white p-8 rounded-lg lg:shadow-md md:shadow-lg w-full max-w-md lg:border md:border border-gray-300 mt-8">
         <h2 className="text-2xl font-bold text-center mb-6">Upload Profile Photo</h2>
         <form action={handlePhotoChange}>
           <label className="block text-gray-700 font-semibold mb-2" htmlFor="profile_photo">

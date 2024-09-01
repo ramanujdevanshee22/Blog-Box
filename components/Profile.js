@@ -56,23 +56,27 @@ function Profile({user}) {
           </button>
         </div>
       )}
+ 
 
-      
 {showConfirm && (
         <div className='fixed inset-0 flex items-center justify-center z-50 bg-gray-800 bg-opacity-50'>
-          <div className='bg-white p-6 rounded-md shadow-md w-80'>
+          <div className='bg-white p-7 rounded-md shadow-md '>
+         
             <h2 className='text-lg font-semibold mb-4'>Confirm Logout</h2>
-            <p className='text-base mb-4'>Are you sure you want to log out?</p>
-            <div className='flex justify-end space-x-2'>
+            <p>Are you sure you want to log out?</p>
+            
+            <div className='mt-4 flex justify-end '>
+         
               <button
                 onClick={cancelLogout}
-                className='bg-gray-200 hover:bg-gray-400 text-gray-800 rounded-md px-3 py-1'
+                className='bg-gray-200 hover:bg-gray-400 text-gray-800 rounded-md py-2 px-4 mr-2'
               >
+            
                 Cancel
               </button>
               <button
                 onClick={confirmLogout}
-                className='bg-red-500 hover:bg-red-700 text-white px-3 py-1 rounded-md'
+                className='bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded-md'
               >
                 Log out
               </button>

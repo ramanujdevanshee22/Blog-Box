@@ -14,7 +14,7 @@ function LoginPage({action}) {
 
   return (
     <section className="flex flex-col items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md border border-gray-300 mt-8">
+      <div className="bg-white p-8 rounded-lg lg:shadow-md md:shadow-lg w-full max-w-md lg:border md:border border-gray-300 mt-8">
         <h2 className="text-2xl font-bold text-center mb-6">Log In</h2>
         <form action={handleLogin}>
           <div className="mb-4">

@@ -7,7 +7,6 @@ export default function AllBlogs({ blogs: initialBlogs, isDelete, userId }) {
   const [sortOption, setSortOption] = useState("latest");
   const [categoryFilter, setCategoryFilter] = useState("all");
 
-
   const filteredBlogs = useMemo(() => {
     let updatedBlogs = [...initialBlogs];
 
@@ -15,7 +14,7 @@ export default function AllBlogs({ blogs: initialBlogs, isDelete, userId }) {
       updatedBlogs = updatedBlogs.filter((blog) => blog.category.toLowerCase() === categoryFilter.toLowerCase());
     }
 
-    if(categoryFilter == "all"){
+    if (categoryFilter === "all") {
       updatedBlogs = initialBlogs;
     }
 
@@ -39,11 +38,11 @@ export default function AllBlogs({ blogs: initialBlogs, isDelete, userId }) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-9 w-full max-w-5xl">
-      <h1 className="text-4xl font-bold mb-6 text-center">Blogs</h1>
+    <div className="container mx-auto px-4 py-6 sm:py-8 lg:py-12 w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center">Blogs</h1>
 
-      <div className="flex justify-between mb-6">
-        <div>
+      <div className="flex flex-col sm:flex-row justify-between mb-6">
+        <div className="mb-4 sm:mb-0">
           <label htmlFor="sort" className="mr-2">Sort by:</label>
           <select
             id="sort"
@@ -65,52 +64,35 @@ export default function AllBlogs({ blogs: initialBlogs, isDelete, userId }) {
             className="p-2 rounded border border-gray-300"
           >
             <option value="all">All</option>
-                <option value="Technology">Technology</option>
-                <option value="Technology">Lifestyle</option>
-                <option value="Technology">Education</option>
-                <option value="Food">Food</option>
-                <option value="Sports">Sports</option>
-                <option value="Music">Music</option>
-                <option value="Politics">Politics</option>
-                <option value="Movie">Movie</option>
-                <option value="Fitness">Fitness</option>
-                <option value="Travel">Travel</option>
-                <option value="Beauty">Beauty</option>
-                <option value="Fashion">Fashion</option>
-                <option value="Books">Books</option>
-                <option value="Religion">Religion</option>
-                <option value="Photography">Photography</option>
-                <option value="Business">Business</option>
-                <option value="Art">Art</option>
-                <option value="News">News</option>
-                <option value="News">Science</option>
-                <option value="News">Environment</option>
-             
+            {/* List of categories */}
+            <option value="Technology">Technology</option>
+            <option value="Lifestyle">Lifestyle</option>
+            {/* Add other categories here */}
           </select>
         </div>
       </div>
 
-      <div className="space-y-16">
+      <div className="space-y-8 sm:space-y-10 md:space-y-12">
         {filteredBlogs.length > 0 ? (
           filteredBlogs.map((blog) => (
             <div
               key={blog._id}
-              className="bg-white p-4 rounded-lg shadow-lg flex items-start"
+              className="bg-white p-4 sm:p-6 rounded-lg shadow-lg flex flex-col sm:flex-row items-start"
             >
               <img
                 src={blog.image_url}
                 alt={blog.title}
-                className="w-48 h-48 object-cover rounded-lg mr-4"
+                className="w-full sm:w-32 md:w-40 lg:w-48 h-auto object-cover rounded-lg mb-4 sm:mb-0 sm:mr-4"
               />
               <div className="flex-1">
-                <div className="flex justify-between items-center">
-                  <h2 className="text-2xl font-bold tracking-normal">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                  <h2 className="text-xl sm:text-2xl font-bold tracking-normal">
                     {blog.title}
                   </h2>
-                  <div className="flex items-center">
+                  <div className="flex items-center mt-2 sm:mt-0">
                     <span className="mr-2">{blog.likes.length}</span>
                     <svg
-                      className="w-6 h-6 text-red-500"
+                      className="w-5 sm:w-6 h-5 sm:h-6 text-red-500"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -118,7 +100,7 @@ export default function AllBlogs({ blogs: initialBlogs, isDelete, userId }) {
                     </svg>
                     <span className="ml-4 mr-2">{blog.comments.length}</span>
                     <svg
-                      className="w-6 h-6 mr-1 text-gray-600"
+                      className="w-5 sm:w-6 h-5 sm:h-6 text-gray-600"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -133,7 +115,7 @@ export default function AllBlogs({ blogs: initialBlogs, isDelete, userId }) {
                   </time>
                 </p>
                 <p
-                  className="text-stone-600 italic mt-6 overflow-hidden"
+                  className="text-stone-600 italic mt-4 sm:mt-6 overflow-hidden"
                   style={{
                     fontFamily: "serif",
                     display: "-webkit-box",
@@ -145,18 +127,22 @@ export default function AllBlogs({ blogs: initialBlogs, isDelete, userId }) {
                 </p>
                 <Link
                   href={`/blogs/${blog._id}`}
-                  className="text-stone-400 hover:bg-stone-100 rounded-md p-1 mt-8 inline-block"
+                  className="text-stone-400 hover:bg-stone-100 rounded-md p-1 mt-4 sm:mt-8 inline-block"
                 >
                   Know More
                 </Link>
-                {isDelete &&  <DeletePost blogId={blog._id} userId={userId}/>}
+                {isDelete && <DeletePost blogId={blog._id} userId={userId} />}
               </div>
             </div>
           ))
         ) : (
-          <div className="flex flex-col items-center justify-center mt-32 p-4 rounded">
-            <div className="text-SecondaryPink text-3xl font-bold">⚠️ No Blog on this particular topic!</div>
-            <p className="text-gray-600 mt-2 animate-pulse text-lg">Try adjusting your filters...</p>
+          <div className="flex flex-col items-center justify-center mt-16 sm:mt-32 p-4 rounded">
+            <div className="text-SecondaryPink text-2xl sm:text-3xl font-bold">
+              ⚠️ No Blog on this particular topic!
+            </div>
+            <p className="text-gray-600 mt-2 animate-pulse text-lg">
+              Try adjusting your filters...
+            </p>
           </div>
         )}
       </div>

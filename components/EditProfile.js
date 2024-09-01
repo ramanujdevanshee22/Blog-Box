@@ -173,7 +173,7 @@ export default function EditProfile({ user }) {
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-SecondaryPurple"
               />
             </div>
-             <div className="space-x-4 justify-center items-center mt-7 p-3 ">
+             <div className="sm:space-x-4 sm:mt-7 my-4 space-x-2">
              <Link
               href="/new-password"
               className="shadow-lg bg-PrimaryBlack text-white py-2 px-4 rounded-lg hover:bg-SecondaryPink transition duration-300"
@@ -182,9 +182,9 @@ export default function EditProfile({ user }) {
             </Link>
             <Link
               href="/profile-photo"
-              className="shadow-lg bg-PrimaryBlack text-white py-2 px-4 rounded-lg hover:bg-SecondaryPink transition duration-300"
+              className="shadow-lg bg-PrimaryBlack text-white py-2 px-4 rounded-lg hover:bg-SecondaryPink transition duration-300 "
             >
-              Change Profile photo
+              Change Photo
             </Link>
               {/* <label className="block text-gray-700 font-semibold mb-1">
                 Image Upload
