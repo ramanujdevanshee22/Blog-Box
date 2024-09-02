@@ -65,9 +65,28 @@ export default function AllBlogs({ blogs: initialBlogs, isDelete, userId }) {
           >
             <option value="all">All</option>
             {/* List of categories */}
-            <option value="Technology">Technology</option>
-            <option value="Lifestyle">Lifestyle</option>
-            {/* Add other categories here */}
+            <option value="">Select a category</option>
+                <option value="Technology">Technology</option>
+                <option value="Technology">Lifestyle</option>
+                <option value="Technology">Education</option>
+                <option value="Food">Food</option>
+                <option value="Sports">Sports</option>
+                <option value="Music">Music</option>
+                <option value="Politics">Politics</option>
+                <option value="Movie">Movie</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Travel">Travel</option>
+                <option value="Beauty">Beauty</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Books">Books</option>
+                <option value="Religion">Religion</option>
+                <option value="Photography">Photography</option>
+                <option value="Business">Business</option>
+                <option value="Art">Art</option>
+                <option value="News">News</option>
+                <option value="News">Science</option>
+                <option value="News">Environment</option>
+             
           </select>
         </div>
       </div>
