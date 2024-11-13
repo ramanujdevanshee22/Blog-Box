@@ -132,7 +132,7 @@ export default function Feedback({ particularBlog, userId, isLiked }) {
               <button
                 title="Delete"
                 onClick={() => handleDelete(comment._id)}
-                className="text-red-500 hover:text-red-700"
+                className="text-red-500 hover:text-red-800"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
