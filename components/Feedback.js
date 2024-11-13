@@ -4,7 +4,8 @@ import { useState } from "react";
 import { CommentHandler, DeleteCommentHandler } from "../lib/Blog";
 import { toast } from "sonner";
 import LikeButton from "./LikeButton";
-
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Feedback({ particularBlog, userId, isLiked }) {
   function formatDate(date) {
@@ -38,7 +39,6 @@ export default function Feedback({ particularBlog, userId, isLiked }) {
         );
         setAllComments(updatedComments);
         setComment("");
-      
       } catch (e) {
         console.log(e);
         toast.error("Failed to add comment");
@@ -104,16 +104,33 @@ export default function Feedback({ particularBlog, userId, isLiked }) {
             className="p-4 bg-gray-100 rounded-lg flex justify-between items-center"
           >
             <div>
-              <p className="text-black font-medium">{comment.user.username}</p>
+              <div className="flex flex-row gap-3 items-center">
+                <Image
+                  src={
+                    comment.user?.profile_img_url || "/images/blank_profile.png"
+                  }
+                  alt={""}
+                  width={40}
+                  height={40}
+                  className="rounded-full w-10 h-10"
+                />
+                <Link
+                  href={`/account/${comment.user?._id || ""}`}
+                  className="text-black font-medium text-sm"
+                >
+                  {comment.user?.username || "Stranger"}
+                </Link>
+              </div>
               <p></p>
               <p className="text-gray-600">{comment.text}</p>
               <time className="text-gray-400 text-sm">
                 {formatDate(comment.date)}
               </time>
             </div>
-            {(userId.id === comment.user || userId.id === particularBlog.author_id._id)  && (
+            {(userId.id === comment.user ||
+              userId.id === particularBlog.author_id._id) && (
               <button
-              title="Delete"
+                title="Delete"
                 onClick={() => handleDelete(comment._id)}
                 className="text-red-500 hover:text-red-700"
               >
@@ -137,4 +154,5 @@ export default function Feedback({ particularBlog, userId, isLiked }) {
         ))}
       </div>
     </>
-  )}
+  );
+}

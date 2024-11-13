@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental:{
-        esmExternals:'loose',
-    }
-}
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
+  experimental: {
+    esmExternals: "loose",
+  },
+};
 
 export default nextConfig;
